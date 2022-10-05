@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class = m-3>
+  <h1>리뷰 목록</h1>
+  <a href="{% url 'articles:create' %}" class="btn btn-outline-primary mt-3">리뷰 작성</a>
+  <table class="table mt-3">
+    <thead>
+      <tr class="table-dark">
+        <th>리뷰 번호</th>
+        <th>리뷰 제목</th>
+        <th>작성 시간</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for re in review %}
+      <tr>
+        <th scope="row">{{re.id}}</th>
+        <td><a href="{% url 'articles:detail' re.pk %}">{{re.title}}</a></td>
+        <td>{{re.created_at}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- <ul>
+  {% for re in review %}
+  <li>{{re.id}}</li>
+  <li><a href="{% url 'articles:detail' re.pk %}">{{re.title}}</a></li>
+  <li>{{re.created_at}}</li>
+  {% endfor %}
+</ul>
+{% endblock content%} -->

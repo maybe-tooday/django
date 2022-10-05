@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="m-3">
+  <h1>제목: {{review.title}}</h1>
+  <p> {{review.content}}</p>
+  <p class="text-end m-1">{{review.created_at}}</p>
+  <div class ='mt-3'>
+    <a href="{% url 'articles:delete' review.pk%}" class="btn btn-outline-secondary me-1">리뷰 삭제</a>
+    <a href="{% url 'articles:edit' review.pk %}" class="btn btn-outline-primary">리뷰 수정</a>
+  </div>
+</div>
+{% endblock content%}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form class="m-3" action="{% url 'articles:new' %}">
+  <label for="namecreate">제목</label>
+  <input type="text" name="namecreate" class="form-control">
+  <label for="textcreate">내용</label>
+  <!-- <input type="text" name="textcreate" class="form-control"> -->
+  <textarea class="form-control" name="textcreate"></textarea>
+  <button type="submit" class="form-control btn btn-primary mt-3">리뷰 쓰기</button>
+</form>
+
+{% endblock content%}
